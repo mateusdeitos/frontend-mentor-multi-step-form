@@ -1,29 +1,25 @@
+import { useStepContext } from "../../Context"
 import styles from "./Sidebar.module.scss"
 
 interface Props {
 	steps: string[]
-	activeStepIndex: number
-	onChangeStep: (index: number) => void
 }
 
 export const Sidebar = ({
 	steps,
-	activeStepIndex,
-	onChangeStep,
 }: Props) => {
+	const [{ step: activeStep }] = useStepContext();
+
 	return <nav className={styles.container}>
 		<div className={styles.steps}>
 			{steps.map((step, index) => {
 				const indexClassName = [
 					styles.index,
-					index === activeStepIndex ? styles.active : ""
+					index === activeStep ? styles.active : ""
 				].join(" ");
 
 				return <div className={styles.step} key={index}>
-					<span 
-						className={indexClassName}
-						onClick={() => onChangeStep(index)}
-					>
+					<span className={indexClassName}>
 						{index + 1}
 					</span>
 					<div className={styles.description}>

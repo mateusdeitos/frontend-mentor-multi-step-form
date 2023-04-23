@@ -1,7 +1,7 @@
 import './global.scss'
 import { Sidebar } from './components/Sidebar/Sidebar'
 import styles from "./App.module.scss"
-import { useState } from 'react';
+import { Router } from './components/Forms/Form';
 
 const steps = [
 	"Your info",
@@ -11,16 +11,12 @@ const steps = [
 ];
 
 function App() {
-	const [activeStepIndex, setActiveStepIndex] = useState(0);
-  return (
-    <div className={styles.app}>
-		<Sidebar
-		steps={steps}
-		activeStepIndex={activeStepIndex} 
-		onChangeStep={setActiveStepIndex}
-		/>
-	</div>
-  )
+	return (
+		<main className={styles.app}>
+			<Sidebar steps={steps} />
+			<Router />
+		</main>
+	)
 }
 
 export default App
