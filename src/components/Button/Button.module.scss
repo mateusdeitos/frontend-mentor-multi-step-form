@@ -1,0 +1,13 @@
+.primary {
+	background-color: var(--color-marine-blue);
+	color: var(--color-light-gray);
+	font-weight: 700;
+	padding: 12px 20px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+
+	&:hover {
+		filter: brightness(1.2);
+	}
+}
