@@ -1,14 +1,8 @@
 import './global.scss'
 import { Sidebar } from './components/Sidebar/Sidebar'
 import styles from "./App.module.scss"
-import { Router } from './components/Forms/Form';
-
-const steps = [
-	"Your info",
-	"Select plan",
-	"Add-ons",
-	"Summary",
-];
+import { Router } from './components/Forms/Router';
+import { steps } from './data/steps';
 
 function App() {
 	return (

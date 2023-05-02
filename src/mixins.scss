@@ -1,0 +1,12 @@
+@mixin cardHoverEffect {
+	transition: all 0.2s ease-in-out;
+
+	&:hover {
+		background-color: var(--color-light-blue);
+	}
+}
+
+@mixin cardActiveEffect {
+	border: 1px solid var(--color-marine-blue);
+	background-color: var(--color-light-blue);
+}

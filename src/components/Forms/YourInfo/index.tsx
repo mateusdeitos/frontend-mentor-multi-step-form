@@ -5,15 +5,16 @@ import { TextInput } from "../../TextInput";
 import * as z from "zod"
 import styles from "./YourInfo.module.scss"
 import { PrimaryButton } from "../../Button";
+import { StepEnum } from "../../../enums/StepEnum";
 
-export const schema = z.object({
+const schema = z.object({
 	name: z.string().min(3).max(50),
 	email: z.string().email(),
 	phone: z.string().min(10).max(15),
 });
 
 export const YourInfo = () => {
-	const [{ form, step }, dispatch] = useStepContext();
+	const [{ form }, dispatch] = useStepContext();
 	const formControl = useForm<typeof form>({
 		resolver: zodResolver(schema),
 		defaultValues: {
@@ -26,7 +27,7 @@ export const YourInfo = () => {
 	const onSubmit = (formData: typeof form) => {
 		dispatch({
 			type: "CHANGE_STEP",
-			payload: step + 1,
+			payload: StepEnum.SELECT_PLAN,
 			formData
 		});
 	}

@@ -1,0 +1,47 @@
+@use "../../../mixins";
+
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	border-radius: 8px;
+	padding: 16px 12px;
+	width: 100%;
+	border: 1px solid var(--color-light-gray);
+	cursor: pointer;
+	margin-bottom: 32px;
+	gap: 32px;
+
+	@include mixins.cardHoverEffect();
+}
+
+.card-icon {
+	width: 32px;
+	height: 32px;
+}
+
+.active {
+	@include mixins.cardActiveEffect();
+}
+
+.card-body {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px;
+}
+
+.card-title {
+	color: var(--color-marine-blue);
+	font-weight: 700;
+	font-size: calc(var(--font-size) * 0.90);
+	margin: 0;
+}
+
+.card-additional-info {
+	color: var(--color-marine-blue);
+	font-size: calc(var(--font-size) * 0.70);
+	font-weight: 400;
+	margin: 0;
+}

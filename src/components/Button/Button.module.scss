@@ -1,11 +1,45 @@
 .primary {
-	background-color: var(--color-marine-blue);
+	background-color: var(--color-purplish-blue);
+	border-color: transparent;
 	color: var(--color-light-gray);
 	font-weight: 700;
 	padding: 12px 20px;
 	border-radius: 8px;
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
+	text-transform: capitalize;
+
+	&:hover {
+		filter: brightness(1.2);
+	}
+}
+
+.secondary {
+	background-color: var(--color-marine-blue);
+	border-color: transparent;
+	color: var(--color-light-gray);
+	font-weight: 700;
+	padding: 12px 20px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	text-transform: capitalize;
+
+	&:hover {
+		filter: brightness(1.2);
+	}
+}
+
+.link {
+	background-color: transparent;
+	color: var(--color-cool-gray);
+	font-weight: 700;
+	padding: 12px 0;
+	font-size: calc(var(--font-size) * 0.8);
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	text-transform: capitalize;
 
 	&:hover {
 		filter: brightness(1.2);

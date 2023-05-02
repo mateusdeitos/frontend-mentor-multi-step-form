@@ -1,22 +1,28 @@
 import { createContext, PropsWithChildren, useContext, useReducer } from "react";
+import { StepEnum } from "./enums/StepEnum";
 
 type FormType = {
 	name: string;
 	email: string;
 	phone: string;
+	plan: "arcade" | "advanced" | "pro";
+	billing: "monthly" | "yearly";
+	addons: Record<string, boolean>
 }
 
 export type ContextState = {
-	step: number;
+	step: typeof StepEnum[keyof typeof StepEnum];
 	form: FormType
 }
 
 type Action = {
 	type: "CHANGE_STEP";
-	payload: number;
+	payload: ContextState["step"];
 	formData?: FormType
 } | {
 	type: "GO_BACK";
+} | {
+	type: "FINISH"
 }
 
 const reducer = (state: ContextState, action: Action): ContextState => {
@@ -24,7 +30,7 @@ const reducer = (state: ContextState, action: Action): ContextState => {
 		case "CHANGE_STEP":
 			return {
 				...state,
-				step: 1,
+				step: action.payload,
 				form: {
 					...state.form,
 					...action.formData ?? state.form
@@ -33,7 +39,12 @@ const reducer = (state: ContextState, action: Action): ContextState => {
 		case "GO_BACK":
 			return {
 				...state,
-				step: state.step > 0 ? state.step - 1 : 0,
+				step: state.step > 0 ? state.step - 1 as ContextState["step"] : StepEnum.YOUR_INFO,
+			}
+		case "FINISH":
+			return {
+				...state,
+				step: StepEnum.FINISH
 			}
 		default:
 			return state
@@ -42,15 +53,20 @@ const reducer = (state: ContextState, action: Action): ContextState => {
 
 const context = createContext<[ContextState, React.Dispatch<Action>] | undefined>(undefined);
 
+const initialState: ContextState = {
+	step: StepEnum.YOUR_INFO,
+	form: {
+		addons: {},
+		name: "",
+		email: "",
+		phone: "",
+		plan: "arcade",
+		billing: "monthly",
+	}
+}
+
 export const StepContextProvider = ({children}: PropsWithChildren<object>) => {
-	const value = useReducer(reducer, {
-		step: 0,
-		form: {
-			name: "",
-			email: "",
-			phone: "",
-		}
-	})
+	const value = useReducer(reducer, initialState)
 
 	return <context.Provider value={value}>
 		{children}

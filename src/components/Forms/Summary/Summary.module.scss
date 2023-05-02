@@ -1,0 +1,135 @@
+.section-footer {
+	flex: 1;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: flex-end;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 100%;
+	flex: 1;
+}
+
+
+.description-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 8px;
+}
+
+.plan-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	border-radius: 8px;
+
+	background-color: var(--color-magnolia);
+
+	padding: 24px 16px;
+}
+
+.plan {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.plan-title {
+	color: var(--color-marine-blue);
+	font-weight: 700;
+	font-size: calc(var(--font-size) * 0.90);
+	margin: 0;
+	text-transform: capitalize;
+}
+
+.plan-change-link {
+	color: var(--color-light-gray);
+	text-decoration: underline;
+	font-size: calc(var(--font-size) * 0.70);
+	margin: 0;
+	padding: 0;
+
+	&:hover {
+		color: var(--color-marine-blue);
+	}
+}
+
+.plan-price {
+	color: var(--color-marine-blue);
+	font-weight: 700;
+	font-size: calc(var(--font-size) * 0.90);
+	margin: 0;
+}
+
+.addons-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 16px;
+
+	background-color: var(--color-magnolia);
+
+	&::before {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 1px;
+		background-color: var(--color-light-gray);
+		margin-bottom: 16px;
+		margin-top: 16px;
+	}
+}
+
+.addon {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.addon-price {
+	color: var(--color-marine-blue);
+	font-size: calc(var(--font-size) * 0.75);
+	margin: 0;
+
+	&::before {
+		content: "+";
+	}
+}
+
+.addon-title {
+	color: var(--color-cool-gray);
+	font-size: calc(var(--font-size) * 0.75);
+	margin: 0;
+}
+
+.total-container {
+	display: flex;
+	flex-direction: row;
+	padding: 24px 16px;
+	justify-content: space-between;
+}
+
+.total-title {
+	color: var(--color-cool-gray);
+	font-size: calc(var(--font-size) * 0.75);
+	margin: 0;
+}
+
+.total-price {
+	color: var(--color-purplish-blue);
+	font-weight: 700;
+	font-size: calc(var(--font-size) * 1.10);
+	margin: 0;
+	padding: 0;
+
+	&::before {
+		content: "+";
+	}
+}

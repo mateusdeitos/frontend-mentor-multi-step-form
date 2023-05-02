@@ -1,0 +1,27 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+	flex: 1;
+}
+
+.section-title {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin-bottom: 48px;
+}
+
+.title {
+	color: var(--color-marine-blue);
+	font-weight: 700;
+	margin: 0;
+}
+
+.sub-title {
+	color: var(--color-cool-gray);
+	font-weight: 400;
+	margin: 0;
+}
