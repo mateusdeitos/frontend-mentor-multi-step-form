@@ -25,7 +25,7 @@ export const addons = {
 	},
 	"customizable_profile": {
 		title: "Customizable Profile",
-		info: "Cusom theme on your profile",
+		info: "Custom theme on your profile",
 		price: {
 			"monthly": 2, 
 			"yearly": 20

@@ -12,6 +12,6 @@ export const TextInput = forwardRef<HTMLInputElement, Props>(({error, ...props},
 			{props.label}
 			{!!error && <p className={styles.error}>{error}</p>}
 		</label>
-		<input type="text" {...props} className={styles.input} ref={ref} />
+		<input type="text" {...props} className={[styles.input, error ? styles.withError : ""].join(" ")} ref={ref} />
 	</div>
 });

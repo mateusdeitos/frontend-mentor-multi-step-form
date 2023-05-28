@@ -23,8 +23,12 @@
 
 .paragraph {
   color: var(--color-cool-gray);
-  font-size: calc(var(--font-size) * 0.8);
+  font-size: calc(var(--font-size) * 1);
   font-weight: 400;
   margin: 0;
   text-align: center;
+
+  a {
+    color: var(--color-cool-gray);
+  }
 }

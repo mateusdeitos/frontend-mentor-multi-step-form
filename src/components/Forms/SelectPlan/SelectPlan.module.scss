@@ -1,34 +1,40 @@
+@import "../../../vars.scss";
 .section-inputs {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
-	width: 100%;
-	flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  flex: 1;
 }
 
 .section-plans {
-	display: flex;
-	flex-direction: row;
-	gap: 16px;
-	width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  width: 100%;
+
+  @media (max-width: $mobile-breakpoint) {
+    flex-direction: column;
+    gap: 8px;
+  }
 }
 
 .section-billing {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	gap: 16px;
-	width: 100%;
-	border-radius: 8px;
-	background-color: var(--color-light-blue);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: var(--color-light-blue);
 }
 
 .section-footer {
-	flex: 1;
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	align-items: flex-end;
-	justify-content: flex-end;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
 }

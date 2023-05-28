@@ -6,6 +6,7 @@ import { Pricing } from "../../Pricing";
 import { Form } from "../Form";
 import styles from "./Summary.module.scss";
 import { StepEnum } from "../../../enums/StepEnum";
+import commomStyles from "../Commom.module.scss"
 
 export const Summary = () => {
 	const [{ form }, dispatch] = useStepContext();
@@ -73,7 +74,7 @@ export const Summary = () => {
 						/>
 					</section>
 				</section>
-				<section className={styles.sectionFooter} style={{justifyContent: "space-between"}}>
+				<section className={commomStyles.sectionFooter} style={{justifyContent: "space-between"}}>
 					<LinkButton type="button" onClick={() => dispatch({ type: "CHANGE_STEP", payload: StepEnum.ADDONS })}>go back</LinkButton>
 					<PrimaryButton type="submit">Confirm</PrimaryButton>
 				</section>

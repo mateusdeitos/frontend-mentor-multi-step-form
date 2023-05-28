@@ -1,3 +1,4 @@
+@import "../../vars.scss";
 .input-group {
   display: flex;
   flex-direction: column;
@@ -31,6 +32,10 @@
     font-weight: 600;
     color: var(--color-cool-gray);
   }
+}
+
+.with-error {
+  border-color: var(--color-strawberry-red);
 }
 
 .error {

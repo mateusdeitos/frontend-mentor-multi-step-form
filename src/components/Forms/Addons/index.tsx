@@ -6,6 +6,7 @@ import styles from "./Addons.module.scss";
 import { addons } from "../../../data/addons";
 import { Addon } from "./Addon";
 import { StepEnum } from "../../../enums/StepEnum";
+import commomStyles from "../Commom.module.scss"
 
 export const Addons = () => {
 	const [{ form }, dispatch] = useStepContext();
@@ -35,7 +36,7 @@ export const Addons = () => {
 					</section>
 
 				</section>
-				<section className={styles.sectionFooter} style={{justifyContent: "space-between"}}>
+				<section className={commomStyles.sectionFooter} style={{justifyContent: "space-between"}}>
 					<LinkButton onClick={() => dispatch({ type: "CHANGE_STEP", payload: StepEnum.SELECT_PLAN })}>go back</LinkButton>
 					<SecondaryButton type="submit">Next Step</SecondaryButton>
 				</section>

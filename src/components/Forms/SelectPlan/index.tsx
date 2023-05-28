@@ -7,6 +7,7 @@ import { Form } from "../Form";
 import { Billing } from "./Billing";
 import { PlanItem } from "./PlanItem";
 import styles from "./SelectPlan.module.scss";
+import commomStyles from "../Commom.module.scss"
 
 export const SelectPlan = () => {
 	const [{ form }, dispatch] = useStepContext();
@@ -52,7 +53,7 @@ export const SelectPlan = () => {
 
 					<Billing />
 				</section>
-				<section className={styles.sectionFooter} style={{justifyContent: "space-between"}}>
+				<section className={commomStyles.sectionFooter} style={{justifyContent: "space-between"}}>
 					<LinkButton type="button" onClick={() => dispatch({ type: "CHANGE_STEP", payload: StepEnum.YOUR_INFO })}>go back</LinkButton>
 					<SecondaryButton type="submit">Next Step</SecondaryButton>
 				</section>

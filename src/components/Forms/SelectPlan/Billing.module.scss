@@ -1,10 +1,18 @@
+@import "../../../vars.scss";
+
 .section-billing {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	gap: 16px;
-	width: 100%;
-	border-radius: 8px;
-	background-color: var(--color-light-blue);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: var(--color-light-blue);
+}
+
+.label {
+  @media (max-width: $mobile-breakpoint) {
+    font-size: calc(var(--font-size) * 0.8);
+  }
 }

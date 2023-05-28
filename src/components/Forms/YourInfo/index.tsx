@@ -4,8 +4,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { TextInput } from "../../TextInput";
 import * as z from "zod"
 import styles from "./YourInfo.module.scss"
+import commomStyles from "../Commom.module.scss"
 import { PrimaryButton } from "../../Button";
 import { StepEnum } from "../../../enums/StepEnum";
+import { Form } from "../Form";
 
 const schema = z.object({
 	name: z.string().nonempty("this field is required").min(3, "the name must have at least 3 characters").max(50, "the name must be less than 50 characters"),
@@ -32,12 +34,11 @@ export const YourInfo = () => {
 		});
 	}
 
-	return <form className={styles.form} onSubmit={formControl.handleSubmit(onSubmit)}>
-		<section className={styles.sectionTitle}>
-			<h1 className={styles.title}>Personal info</h1>
-			<p className={styles.subTitle}>Please provide your name, email address and phone number.</p>
-		</section>
-
+	return <Form 
+		onSubmit={formControl.handleSubmit(onSubmit)}
+		title="Personal info"
+		subTitle="Please provide your name, email address and phone number."
+	>
 		<section className={styles.sectionInputs}>
 			<TextInput
 				label="name"
@@ -59,10 +60,9 @@ export const YourInfo = () => {
 			/>
 		</section>
 
-		<section
-		className={styles.sectionFooter}>
+		<section className={commomStyles.sectionFooter}>
 			<PrimaryButton type="submit">Next Step</PrimaryButton>
 		</section>
-	</form>;
+	</Form>;
 
 };

@@ -7,11 +7,11 @@ export const Billing = () => {
 	const formControl = useFormContext<ContextState["form"]>();
 	const billing = formControl.watch("billing");
 	return <section className={styles.sectionBilling}>
-		<p>Monthly</p>
+		<p className={styles.label}>Monthly</p>
 		<Switch 
 			checked={billing === "yearly"}
 			onChange={(e) => formControl.setValue("billing", e.currentTarget.checked ? "yearly" : "monthly")}
 		/>
-		<p>Yearly</p>
+		<p className={styles.label}>Yearly</p>
 	</section>
 }
