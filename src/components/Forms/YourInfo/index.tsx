@@ -8,9 +8,9 @@ import { PrimaryButton } from "../../Button";
 import { StepEnum } from "../../../enums/StepEnum";
 
 const schema = z.object({
-	name: z.string().min(3).max(50),
-	email: z.string().email(),
-	phone: z.string().min(10).max(15),
+	name: z.string().nonempty("this field is required").min(3, "the name must have at least 3 characters").max(50, "the name must be less than 50 characters"),
+	email: z.string().nonempty("this field is required").email("invalid email"),
+	phone: z.string().nonempty("this field is required").min(10, "the phone number must have at least 10 characters").max(20, "the phone number must be less than 20 characters"),
 });
 
 export const YourInfo = () => {
@@ -39,12 +39,28 @@ export const YourInfo = () => {
 		</section>
 
 		<section className={styles.sectionInputs}>
-			<TextInput label="name" placeholder="e.g. Stephen King" {...formControl.register("name")} />
-			<TextInput label="email" placeholder="e.g. stephenking@lorem.com" {...formControl.register("email")} />
-			<TextInput label="phone number" placeholder="e.g. +1 234 567 890" {...formControl.register("phone")} />
+			<TextInput
+				label="name"
+				placeholder="e.g. Stephen King"
+				{...formControl.register("name")}
+				error={formControl.formState.errors?.name?.message}
+			/>
+			<TextInput
+				label="email"
+				placeholder="e.g. stephenking@lorem.com"
+				{...formControl.register("email")}
+				error={formControl.formState.errors?.email?.message}
+			/>
+			<TextInput
+				label="phone number"
+				placeholder="e.g. +1 234 567 890"
+				{...formControl.register("phone")}
+				error={formControl.formState.errors?.phone?.message}
+			/>
 		</section>
 
-		<section className={styles.sectionFooter}>
+		<section
+		className={styles.sectionFooter}>
 			<PrimaryButton type="submit">Next Step</PrimaryButton>
 		</section>
 	</form>;
