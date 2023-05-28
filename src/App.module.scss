@@ -8,6 +8,7 @@
   padding: 16px;
   border-radius: 16px;
   width: 990px;
+  margin: 0 auto;
 
   @media (max-width: $mobile-breakpoint) {
     flex-direction: column;

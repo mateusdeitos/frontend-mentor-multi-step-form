@@ -1,12 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+import {StrictMode} from 'react'
+import {createRoot} from 'react-dom/client'
+import {App} from './App'
 import { StepContextProvider } from './Context'
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
+createRoot(document.getElementById('root') as HTMLElement).render(
+  <StrictMode>
     <StepContextProvider>
 		<App />
 	</StepContextProvider>
-  </React.StrictMode>,
+  </StrictMode>,
 )

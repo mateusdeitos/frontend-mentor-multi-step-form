@@ -4,7 +4,7 @@ import styles from "./App.module.scss"
 import { Router } from './components/Forms/Router';
 import { steps } from './data/steps';
 
-function App() {
+export function App() {
 	return (
 		<main className={styles.app}>
 			<Sidebar steps={steps} />
@@ -12,5 +12,3 @@ function App() {
 		</main>
 	)
 }
-
-export default App
