@@ -13,6 +13,7 @@ type FormType = {
 export type ContextState = {
 	step: typeof StepEnum[keyof typeof StepEnum];
 	form: FormType
+	progress: "editing" | "finished"
 }
 
 type Action = {
@@ -44,7 +45,7 @@ const reducer = (state: ContextState, action: Action): ContextState => {
 		case "FINISH":
 			return {
 				...state,
-				step: StepEnum.FINISH
+				progress: "finished"
 			}
 		default:
 			return state
@@ -54,6 +55,7 @@ const reducer = (state: ContextState, action: Action): ContextState => {
 const context = createContext<[ContextState, React.Dispatch<Action>] | undefined>(undefined);
 
 const initialState: ContextState = {
+	progress: "editing",
 	step: StepEnum.YOUR_INFO,
 	form: {
 		addons: {},

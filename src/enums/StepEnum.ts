@@ -5,5 +5,4 @@ export const StepEnum = {
 	SELECT_PLAN: 1,
 	ADDONS: 2,
 	SUMMARY: 3,
-	FINISH: 4,
 } as const

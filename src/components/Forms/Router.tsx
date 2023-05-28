@@ -4,11 +4,12 @@ import { Addons } from "./Addons";
 import styles from "./Form.module.scss"
 import { SelectPlan } from "./SelectPlan";
 import { Summary } from "./Summary";
+import { Finish } from "./Finish";
 import { YourInfo } from "./YourInfo";
 
 
 export const Router = () => {
-	const [{ step }] = useStepContext();
+	const [{ step, progress }] = useStepContext();
 	
 	return <div className={styles.container}>
 		{(() => {
@@ -25,8 +26,13 @@ export const Router = () => {
 			}
 
 			if (step === StepEnum.SUMMARY) {
-				return <Summary/>
+				if (progress === "editing") {
+					return <Summary />
+				}
+
+				return <Finish />
 			}
+
 		})()}
 	</div>
 }
